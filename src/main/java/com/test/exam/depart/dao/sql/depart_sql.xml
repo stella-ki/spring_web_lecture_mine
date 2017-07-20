@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"> 
+
+<mapper namespace = "depart">
+
+	<select id = "DEPART_LIST" resultType = "java.util.HashMap">
+		select 
+			depart_num,
+			depart_name
+			from depart_table
+	</select>
+
+
+</mapper>
