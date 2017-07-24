@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/common/header.jsp" %>
-
+<%@ page import="com.test.exam.user.dto.User"%>
 <html>
 <head>
 	<title> User Main</title>
@@ -43,9 +43,12 @@ ${userid}님 반갑습니다.
 <br><a href="#" onclick="pageMove('/user/userlist')">회원리스트</a>
 <br><a href="#" onclick="pageMove('/board/list')">게시판리스트</a>
 <%
-	
+	HttpSession admin = request.getSession();
+	User user = (User)admin.getAttribute("user");
+	if(user.getAdmin().equals("1")){
 %>
 <br><a href="#" onclick="pageMove('/db/add_dbms')">DB추가</a>
+<% 	} %>
 <div id="resultDiv"></div>
 </body>
 </html>

@@ -35,7 +35,7 @@ public class UserController {
 		}
 	}
 
-	//from tag의 parameter값을 가져오는 것과 비슷하다.
+	/*//from tag의 parameter값을 가져오는 것과 비슷하다.
 	@RequestMapping(value="/user/test", method=RequestMethod.GET)
 	public @ResponseBody Map loginTest(HttpServletRequest request, @RequestParam Map pm,ModelMap model,HttpSession hs) {
 		User user = us.getUserPwd(pm);
@@ -46,12 +46,13 @@ public class UserController {
 			model.put("msg", "Login Fail");
 		}else{
 			hs.setAttribute("ID", user.getUser_id());
+			hs.setAttribute("user", user);
 			model.put("data", "S");
 			model.put("url", "/user/main");
 			model.put("msg", "Login Success");
 		}
 		return model;
-	}
+	}*/
 	
 	//html에서 body에 있는 값을 가져 올 수 있따. json 형태로 읽어오게 된다.
 	//DTO도 받아 올 수 있는데 이걸로 쓰면 좀 느려서 그냥 String으로 받아와서 json을 만드는 것이 더 좋다.
@@ -65,6 +66,7 @@ public class UserController {
 			model.put("msg", "Login Fail");
 		}else{
 			hs.setAttribute("ID", user.getUser_id());
+			hs.setAttribute("user", user);
 			model.put("data", "S");
 			model.put("url", "/user/main");
 			model.put("msg", "Login Success");

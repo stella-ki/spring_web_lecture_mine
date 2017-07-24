@@ -7,7 +7,11 @@
 	<select id="USER_PWD_OBJECT" parameterType="Map" resultType="user">
 	  select 
 	    user_id,
-	  	user_pwd 
+	  	user_pwd,
+	  	user_name, 
+	  	age,
+	  	admin,
+	  	board_admin
 	  from user_info 
 	  where user_id = #{userid}
 	</select>	
